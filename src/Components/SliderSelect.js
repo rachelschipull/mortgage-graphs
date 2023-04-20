@@ -2,8 +2,7 @@ import React from 'react';
 import SliderComponent from './Common/SliderComponent'
 import ListPrice from './ListPrice'
 
-const SliderSelect = ({ data, setData }) => {
-    const bank_limit = 10000;
+const SliderSelect = ({ data, setData, bankLimit }) => {
 
     return (
         <div>
@@ -18,7 +17,7 @@ const SliderSelect = ({ data, setData }) => {
                 }}
                 defaultValue={data.homeValue}
                 min={1000}
-                max={bank_limit}
+                max={bankLimit}
                 steps={100}
                 unit="$"
                 amount={data.homeValue}

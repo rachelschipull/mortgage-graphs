@@ -8,6 +8,9 @@ import TenureSelect from './Components/TenureSelect';
 import ListPrice from './Components/ListPrice';
 
 function App() {
+
+  const [bankLimit, setBanklimit] = useState(100000)
+
   const [data, setData] = useState({
     homeValue: 3000,
     downPayment: 3000 * 0.2, 
@@ -19,11 +22,11 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <ListPrice />
+      <ListPrice bankLimit={bankLimit} setBanklimit={setBanklimit}/>
         <Container maxWidth="xl" sx={{marginTop:4}}>
           <Grid container spacing={5} alignItems="center">
             <Grid item xs={12} md={6}>
-              <SliderSelect data={data} setData={setData}/>
+              <SliderSelect data={data} setData={setData} bankLimit={bankLimit}/>
               <TenureSelect data={data} setData={setData}/>
             </Grid>
             <Grid item xs={12} md={6}>

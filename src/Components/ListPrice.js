@@ -1,32 +1,31 @@
 import React from "react";
-import { useState } from "react";
 import { TextField } from "@mui/material";
-import { Container } from "@mui/system";
+import { Container, Form } from "@mui/system";
 import Typography from "@mui/material/Typography";
-import { bank_limit } from "./SliderSelect";
 
-const ListPrice = () => {
 
-const [bank_limit, setBanklimit] = useState('100000')
+function ListPrice({bankLimit, setBanklimit}) {
+
+
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    setBanklimit('')
 }
     return(
         <Container>
-            <Form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
+            <Typography>Set your List Price</Typography>
             <TextField 
-            id="filled-basic" 
-            label="Filled" 
-            variant="filled"
-            value="bank_limit"
-            onChange={(e) =>
-                setBanklimit(e.target.value)
-              } >
-                <Typography>Set your List Price</Typography>
+                id="filled-basic" 
+                label="Filled" 
+                variant="filled"
+                value={bankLimit}
+                type="number"
+                onChange={(e) =>
+                    setBanklimit(e.target.value)
+                } >
             </TextField>
-            </Form>
+            </form>
         </Container>
     )
 
